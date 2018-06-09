@@ -2,7 +2,7 @@
   "name": "08-rest",
   "version": "1.0.0",
   "description": "![cf](https://i.imgur.com/7v5ASc8.png) Lab 08: REST ======",
-  "main": "wallaby.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest --coverage --verbose",
     "lint": "eslint **/*.js",
