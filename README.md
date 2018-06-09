@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/annaboyatyuk/08-rest.svg?branch=master)](https://travis-ci.com/annaboyatyuk/08-rest)
+
+
+
 ![cf](https://i.imgur.com/7v5ASc8.png) Lab 08: REST
 ======
 
@@ -5,12 +9,13 @@
 
 
 ## Links
-* pr 
-* travis 
+* pr https://github.com/annaboyatyuk/08-rest/pull/1 
+* travis https://travis-ci.com/annaboyatyuk/08-rest/builds/75820558
 * heroku https://dashboard.heroku.com/apps/lab8rest
 
 
 ## Configuration 
+use postman to test the GET PUT POST and DELETE 
 
 
 ## Tests
