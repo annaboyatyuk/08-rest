@@ -2,13 +2,7 @@
 
 const router = require('../lib/router.js');
 
-/**
- * GET Route (/)
- * Accepts an optional "name" query string parameter and says Hello
- * test with httpie:
- *     http http://localhost:8080
- *     http http://localhost:8080?name=John
- */
+
 router.get('/', (req,res) => {
   res.statusCode = 200;
   res.statusMessage = 'OK';
@@ -17,49 +11,51 @@ router.get('/', (req,res) => {
   res.end();
 });
 
-
-// router.get('/grape', (req, res) => {
-//   res.statusCode = 200;
-//   res.statusMessage = 'GRAPE';
-//   res.write('its GGGRRRAAAAAPPE!');
-//   res.end();
-// });
-
-// router.get('/api/v1/grapes', (req, res) => {
-//   res.statusCode = 200;
-//   res.write('all the grapes');
-//   res.end();
-// });
-
-// router.get('/api/v1/grapes?id', (req, res) => {
-//   res.statusCode = 200;
-//   res.write('j;sldjfomisjcofisjoifjsoainfvoijiofsc \n one grape!');
-//   res.end();
-// });
-
-
-
-
 router.get('/api/v1/grapes', (req, res) => {
-  res.statusCode = 200;
-  let message = `ID: ${req.query.id}`;
-  res.write(message);
+  const id = req.query.id;
+  if(id) {
+    res.statusCode = 200;
+    res.write(`ID: ${id}`);
+  }
+  else{
+    res.statusCode = 400;
+    res.write('Bad Request');
+  }
   res.end();
 });
 
-
-/**
- * POST Route (/data)
- * Accepts a JSON object and simply regurgitates it back to the browser
- * test with httpie:
- *     echo '{"title":"Go Home","content":"foobar"}' | http post http://localhost:8080/data
- */
-router.post('/data', (req,res) => {
+router.post('/api/v1/grapes', (req,res) => {
   res.statusCode = 200;
   res.statusMessage = 'OK';
-  res.write( JSON.stringify(req.body) );
+  res.write(JSON.stringify(req.body));
   res.end();
 });
 
-module.exports = {};
+router.put('/api/v1/grapes', (req, res) => {
+  const id = req.query.id;
+  if(id) {
+    res.statusCode = 200;
+    res.statusMessage = 'OK';
+    res.write(JSON.stringify(req.body));
+  }
+  else {
+    res.statusCode = 400;
+    res.write('Bad Request');
+  }
+  res.end();
+});
+
+router.delete('/api/v1/grapes', (req, res) => {
+  const id = req.query.id;
+  if(id) {
+    res.statusCode = 200;
+    res.statusMessage = 'OK';
+    res.write(`ID: ${id} was deleted`);
+  }
+  else {
+    res.statusCode = 400;
+    res.write('Bad Request');
+  }
+  res.end();
+});
 
