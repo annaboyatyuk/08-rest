@@ -34,10 +34,11 @@ describe('app', () => {
       .post('http://localhost:3003/api/v1/grapes')
       .catch(err => {
         expect(err.response.text).toBe(`Bad Request (/api/v1/grapes)`);
+        expect(err.status).toBe(400);
       });
   });
 
-  it('should return id for GET /?id=foo', () => {
+  it('should return body content for POST', () => {
     let object = {'dlskjfe':'sldkjfoei'};
     return superagent
       .post('http://localhost:3003/api/v1/grapes')
