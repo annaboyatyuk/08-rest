@@ -26,3 +26,7 @@ use postman to test the GET PUT POST and DELETE
  * `GET`: test 200, it should contain a response body for a request made with a valid id
  * `POST`: test 400, it should respond with 'bad request' if no request body was provided or the body was invalid
  * `POST`: test 200, it should respond with the body content for a post request with a valid body
+
+
+### Credits
+* the demo code was a very helpful start for this lab
